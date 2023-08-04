@@ -1,0 +1,17 @@
+server:
+  port: 1115
+
+spring:
+  application:
+    name: COMPANY-RATING
+  datasource:
+    url: jdbc:mysql://localhost:3306/companyrating
+    username: root
+    password: ac3r
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate: org.hibernate.dialect.MySQL8Dialect
