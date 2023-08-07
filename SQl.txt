@@ -81,6 +81,93 @@
 	GROUP BY Employee_TITLE, AFFECTED_FROM
 	HAVING COUNT(*) > 1;
 
+25.Write an SQL query to show only odd rows from a table.
+= SELECT * FROM Employee WHERE MOD (EMPLOYEE_ID, 2) <> 0;
+
+26.Write an SQL query to clone a new table from another table.
+= SELECT * INTO EmployeeClone FROM Employee 
+
+27.Write an SQL query to fetch intersecting records of two tables
+= (SELECT * FROM Employee 
+INTERSECT
+(SELECT * FROM EmployeeClone );
+
+28.Write an SQL query to show records from one table that another table does not have
+=  SELECT * FROM Employee 
+MINUS
+SELECT * FROM Title;
+
+29.Write an SQL query to show the current date and time
+= SELECT CURDATE();
+
+30.Write an SQL query to show the top n (say 10) records of a table.
+= SELECT * FROM Employee ORDER BY Salary DESC LIMIT 10;
+
+31.Write an SQL query to determine the nth (say n=5) highest salary from a table.
+= SELECT Salary FROM Employee ORDER BY Salary DESC LIMIT n-1,1;
+
+32. Write an SQL query to determine the 5th highest salary without using the TOP or limit method.
+=SELECT Salary
+FROM Employee E1
+WHERE 4 = (
+ SELECT COUNT( DISTINCT ( E2.Salary ) )
+ FROM Employee E2
+ WHERE E2.Salary >= E1.Salary
+ );
+
+33.Write an SQL query to fetch the list of employees with the same salary
+= Select distinctE.EMPLOYEE_ID, E.FIRST_NAME, E.Salary 
+from Employee E, Employee E1 
+where E.Salary = E1.Salary 
+and E.EMPLOYEE_ID != E1.EMPLOYEE_ID;
+
+34.Write an SQL query to show one row twice in the results from a table.
+= select FIRST_NAME, DEPARTMENT from Employee E where E.DEPARTMENT='HR' 
+union all 
+select FIRST_NAME, DEPARTMENT from Employee E1 where E1.DEPARTMENT='HR';
+
+35.Write an SQL query to fetch intersecting records of two tables
+=(SELECT * FROM Employee )
+INTERSECT
+(SELECT * FROM EmployeeClone);
+
+36.Write an SQL query to fetch the first 50% of records from a table.
+=SELECT *
+FROM EMPLOYEE
+WHERE EMPLOYEE_ID <= (SELECT count(EMPLOYEE_ID)/2 from Employee );
+
+37.Write an SQL query to fetch the departments that have less than five people in them.
+= SELECT DEPARTMENT, COUNT(EMPLOYEE_ID) as 'Number of Employee ' FROM Employee  GROUP BY DEPARTMENT HAVING COUNT(EMPLOYEE_ID) < 5;
+
+38.Write an SQL query to show all departments along with the number of people in there.
+=SELECT DEPARTMENT, COUNT(DEPARTMENT) as 'Number of Employee ' FROM Employee GROUP BY DEPARTMENT;
+
+39.Write an SQL query to fetch the first row of a table.
+=Select * from Employee where EMPLOYEE_ID = (SELECT min(EMPLOYEE_ID) from Employee );
+
+40.Write an SQL query to fetch the last five records from a table.
+= SELECT * FROM Worker WHERE EMPLOYEE_ID <=5
+UNION
+SELECT * FROM (SELECT * FROM Employee E order by E.EMPLOYEE_ID DESC) AS E1 WHERE E1.EMPLOYEE_ID <=5;
+
+41. Write an SQL query to print the name of employees having the highest salary in each department.
+= SELECT t.DEPARTMENT,t.FIRST_NAME,t.Salary from(SELECT max(Salary) as TotalSalary,DEPARTMENT from Employee group by DEPARTMENT) as TempNew 
+Inner Join Employee t on TempNew.DEPARTMENT=t.DEPARTMENT 
+ and TempNew.TotalSalary=t.Salary;
+
+42.Write an SQL query to fetch three max salaries from a table.
+=  SELECT distinct Salary from Employee a WHERE 3 >= (SELECT count(distinct Salary) from Employee b WHERE a.Salary <= b.Salary) order by a.Salary desc;
+
+43.Write an SQL query to fetch nth max salaries from a table
+=SELECT distinct Salary from Employee a WHERE n >= (SELECT count(distinct Salary) from Employee b WHERE a.Salary <= b.Salary) order by a.Salary desc;
+
+43.Write an SQL query to fetch departments along with the total salaries paid for each of them.
+= SELECT DEPARTMENT, sum(Salary) from Employee group by DEPARTMENT;
+
+44.Write an SQL query to fetch the names of workers who earn the highest salary.
+=SELECT FIRST_NAME, SALARY from Employee WHERE SALARY=(SELECT max(SALARY) from Employee );
+
+
 
 
 
