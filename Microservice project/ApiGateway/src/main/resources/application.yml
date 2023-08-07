@@ -1,0 +1,36 @@
+server:
+  port: 1116
+
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+   gateway:
+    routes:
+      - id: EMPLOYEE-SERVICE
+        uri: lb://EMPLOYEE-SERVICE
+        predicates:
+          - Path=/employee/**
+
+      - id: COMPANY-SERVICE
+        uri: lb://COMPANY-SERVICE
+        predicates:
+          - Path=/company/**
+
+      - id: COMPANY-RATING
+        uri: lb://COMPANY-RATING
+        predicates:
+          - Path=/Rating/**
+eureka:
+    instance:
+      prefer-ip-address: true
+    client:
+      fetch-registry: true
+      register-with-eureka: true
+      service-url:
+        defaultZone: http://localhost:8761/eureka
+
+
+
+
