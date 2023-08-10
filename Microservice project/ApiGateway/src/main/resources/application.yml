@@ -31,13 +31,13 @@ eureka:
       service-url:
         defaultZone: http://localhost:8761/eureka
 
-okta:
- oauth2:
-  issuer: https://dev-63597725.okta.com/oauth2/default
-  audience: api://default
-  client-id: 0oaanxpq6x1Krn2L95d7
-  client-secrete: fTLjT1GbGX3JYpNl1m2uHMp2bvxHwQqqz5nUQTwrEqfTESxc0gRFXKmCSQqBXYZ0
-  scopes: openid, profile, email, offline_access
+#okta:
+# oauth2:
+#  issuer: https://dev-63597725.okta.com/oauth2/default
+#  audience: api://default
+#  client-id: 0oaanxpq6x1Krn2L95d7
+#  client-secrete: fTLjT1GbGX3JYpNl1m2uHMp2bvxHwQqqz5nUQTwrEqfTESxc0gRFXKmCSQqBXYZ0
+#  scopes: openid, profile, email, offline_access
 
 
 

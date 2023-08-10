@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RestController
-@RequestMapping("/auth")
+//@RestController
+//@RequestMapping("/auth")
 public class authController {
-
+/*
   private Logger logger= LoggerFactory.getLogger(authController.class);
 
 
@@ -51,5 +51,5 @@ public class authController {
       authResponse.setAuthorities(authorities);
 
       return new ResponseEntity<>(authResponse, HttpStatus.OK);
-  }
+  }*/
 }

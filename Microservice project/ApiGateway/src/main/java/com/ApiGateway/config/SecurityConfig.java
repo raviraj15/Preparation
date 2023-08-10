@@ -6,11 +6,11 @@ import org.springframework.security.config.annotation.web.reactive.EnableWebFlux
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 
-@Configuration
-@EnableWebFluxSecurity
+//@Configuration
+//@EnableWebFluxSecurity
 public class SecurityConfig {
 
-    @Bean
+ /*   @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity httpSecurity)
     {
         httpSecurity
@@ -23,5 +23,5 @@ public class SecurityConfig {
                 .oauth2ResourceServer()
                 .jwt();
         return httpSecurity.build();
-    }
+    }*/
 }

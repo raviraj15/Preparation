@@ -7,14 +7,14 @@ import lombok.Setter;
 
 import java.util.Collection;
 
-@Getter
+/*@Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor*/
 
 public class AuthResponse {
 
-    private String userId;
+  /*  private String userId;
 
     private  String accessToken;
 
@@ -22,5 +22,5 @@ public class AuthResponse {
 
     private long expireAt;
 
-    private Collection<String> authorities;
+    private Collection<String> authorities;*/
 }
