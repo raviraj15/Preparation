@@ -1,5 +1,5 @@
 server:
-  port: 1116
+  port: 2222
 
 
 spring:
@@ -31,13 +31,13 @@ eureka:
       service-url:
         defaultZone: http://localhost:8761/eureka
 
-#okta:
-# oauth2:
-#  issuer: https://dev-63597725.okta.com/oauth2/default
-#  audience: api://default
-#  client-id: 0oaanxpq6x1Krn2L95d7
-#  client-secrete: fTLjT1GbGX3JYpNl1m2uHMp2bvxHwQqqz5nUQTwrEqfTESxc0gRFXKmCSQqBXYZ0
-#  scopes: openid, profile, email, offline_access
+okta:
+  oauth2:
+    issuer: https://dev-09750039.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oaar9mbvccCv2sdR5d7
+    client-secrete: W2sQLZLCjLT7Iw-oYOBTwzizSxVzTMnsSYmp_iucCRtxkcQgnJf34rrI7NukMcnd
+    scopes: openid, profile, email, offline_access
 
 
 
